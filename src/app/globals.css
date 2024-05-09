@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+.btn-hover {
+    min-width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+
+    background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+
+
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover-empty {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    height: 55px;
+    text-align: center;
+    border: 2px solid transparent;
+    /* Устанавливаем прозрачную границу */
+    background: none;
+    /* Убираем фоновый градиент */
+    border-radius: 50px;
+    transition: border-color .4s ease-in-out;
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+
+.btn-hover-empty:hover {
+    border-color: #6253e1;
+}
+
+/* anims */
+
+.animated:after {
+    background-color: #f66d52;
+    /* Цвет линии при наведении на нее курсора мыши */
+    display: block;
+    content: "";
+    margin-top: 10px;
+    height: 2px;
+    /* Высота линии */
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+    animation: loading linear;
+    animation-timeline: view();
+}
+
+@keyframes loading {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .img,
+    .divAnimated {
+        scale: .8;
+        opacity: 0;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range: 100px 300px;
+    }
+
+    @keyframes fade-in {
+        to {
+            scale: 1;
+            opacity: 1;
+        }
+    }
+}

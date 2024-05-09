@@ -1,0 +1,76 @@
+.backdropL {
+    overflow: hidden;
+    animation: backdropL 1s ease;
+    animation-delay: 1s;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    animation-fill-mode: forwards
+}
+
+.loader {
+    display: inline-flex;
+    gap: 5px;
+}
+
+.loader-text {
+    transform: translateX(-120%);
+    animation: textMove 2.5s ease;
+    animation-fill-mode: forwards
+}
+
+.loader:after {
+    --s: -1;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes backdropL {
+    0% {
+        /* opacity: 1; */
+        bottom: 0;
+    }
+
+    100% {
+        display: none;
+        /* opacity: 0; */
+        bottom: 1000px;
+    }
+}
+
+@keyframes textMove {
+    0% {
+        opacity: 0;
+        transform: translateX(-45%);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateX(-45%);
+    }
+
+    30% {
+        transform: translateX(-45%);
+    }
+
+    100% {
+        transform: translateX(-120%);
+    }
+}
