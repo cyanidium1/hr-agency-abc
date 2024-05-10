@@ -4,10 +4,16 @@
 
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
+body {
+    font-family: 'Jost', sans-serif;
+}
+
+
 .btn-hover {
     min-width: 200px;
     font-size: 16px;
-    font-weight: 600;
+    /* font-weight: 600; */
+    text-transform: uppercase;
     color: #fff;
     cursor: pointer;
     height: 55px;
@@ -38,14 +44,13 @@
 .btn-hover-empty {
     width: 200px;
     font-size: 16px;
-    font-weight: 600;
+    text-transform: uppercase;
+    /* font-weight: 600; */
     cursor: pointer;
     height: 55px;
     text-align: center;
     border: 2px solid transparent;
-    /* Устанавливаем прозрачную границу */
     background: none;
-    /* Убираем фоновый градиент */
     border-radius: 50px;
     transition: border-color .4s ease-in-out;
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
@@ -58,7 +63,7 @@
 /* anims */
 
 .animated:after {
-    background-color: #f66d52;
+    background: linear-gradient(to right, blue, violet);
     /* Цвет линии при наведении на нее курсора мыши */
     display: block;
     content: "";

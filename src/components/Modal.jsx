@@ -6,7 +6,7 @@ import { CiMail } from "react-icons/ci";
 import { sendMessage } from "@/app/sendMsg";
 import SuccessModal from "./SuccessModal";
 
-export default function ModalWw({ text = 'Связаться', subject = null, details = null, price = null }) {
+export default function ModalWw({ text = 'Оставить заявку', subject = null, details = null, price = null }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
@@ -28,7 +28,7 @@ export default function ModalWw({ text = 'Связаться', subject = null, d
 
     return (
         <>
-            <Button onClick={onOpen} color="secondary" variant="flat" className="text-xl rounded-full p-6 hover:bg-violet-400 duration-300 hover:text-white">{text}</Button>
+            <Button onClick={onOpen} color="secondary" variant="flat" className="btn-hover">{text}</Button>
             <Modal isOpen={isOpen} onClose={onClose} placement="center">
                 <ModalContent>
                     <ModalHeader>Форма связи</ModalHeader>

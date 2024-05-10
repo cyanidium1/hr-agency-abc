@@ -1,20 +1,19 @@
 import React from "react";
-import { Card } from "@nextui-org/react";
-import Image from "next/image";
 
+export const CustomCard = ({ icon, text, title }) => {
 
-
-export const CustomCard = ({ imageUrl, text }) => (
-    <Card className="sm:w-1/3 sm:space-y-5 mb-2 p-2 sm:p-4 divAnimated" radius="2xl">
-        <Image
-            src={imageUrl}
-            className="rounded-xl"
-            width={500}
-            height={200}
-            alt="Picture of the author"
-        />
-        <div className="space-y-3 p-4 sm:p-0">
-            <p className="text-2xl">{text}</p>
+    return (
+        <div class="mb-3 rounded-xl py-4 px-4 shadow-md transition-all hover:shadow-lg sm:p-3 lg:px-3 xl:px-4 divAnimated bg-white dark:bg-black dark:bg-opacity-30">
+            <div class="mx-auto mb-7 inline-block">
+                {icon}
+            </div>
+            <div>
+                <h3 class="mb-4 text-xl font-bold sm:text-2xl lg:text-xl xl:text-2xl">{title}
+                </h3>
+                <p class="text-base font-medium text-body-color">
+                    {text}
+                </p>
+            </div>
         </div>
-    </Card>
-);
+    );
+};
